@@ -4,7 +4,7 @@ import re
 
 
 class RegexCleaner:
-    filter = re.compile(r'\$ \d+(?:\.\d+)?')
+    filter = re.compile(r'\$\d+(?: \.\d+)?')
 
     def clean(self, raw_input: str) -> List[float]:
         dollars_string: List = [amt.strip("$") for amt in self.filter.findall(raw_input)]
